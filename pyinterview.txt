@@ -1,0 +1,686 @@
+﻿Interview questions
+
+
+First round with the HR and then a technical interview for SQL and Python. SQL questions are mainly from Leetcode and Python basics such as writing a simple function. Interviews are quite straightforward. Practice SQL questions from Hackerrank or Leetcode
+Live coding exercises in C++ included linked lists and circular buffers among others. The C questions involved being shown various code snippets and finding the bugs and/or issues, many of which were very subtle, so know your C!
+SQL, product questions and some stats questions
+There were two test during the process Use hackerrank as online coding test. The difficulty of problems are easy~medium. My interview is not a pleasant experience. The interview ended quickly due to communication issue.
+https://www.mockquestions.com/company/Roku%2C+Inc./
+https://www.globalguideline.com/interview_questions/Questions.php?sc=Roku&id=42538
+https://leetcode.com/discuss/interview-question/1275091/roku-coding-question-about-recursion
+
+
+lambda stuff
+a = lambda x, y : x*y
+print(a(7, 19))
+
+
+monkey
+# g.py
+class GeeksClass:
+def function(self):
+print "function()"
+
+
+import m
+def monkey_function(self):
+print "monkey_function()"
+m.GeeksClass.function = monkey_function
+obj = m.GeeksClass()
+obj.function()
+
+
+interviewbit.com/python-interview-questions/
+Udemy on Algorithms
+________________
+
+
+factorial
+"""
+factorial recurtions
+"""
+
+
+def factorial(n):
+# love this line
+assert n>=0 and int(n) == n, "The number must be positive only!"
+print(n)
+# if n in [0,1]: # wow! easier than the two lines. 
+if n == 0:
+return 1
+if n == 1:
+return 1
+else:
+return n * factorial(n-1)
+
+
+print(factorial(5))
+try:
+num = -1
+print(factorial(num))
+except Exception as err:
+print(f"value: {str(num)}, {err}")
+try:
+num = 2.5
+print(factorial(num))
+except Exception as err2:
+print(f"value: {str(num)}, {err2}")
+
+
+assert syntax
+x=2
+assert x<1, 'x is not less than 1'
+
+
+
+
+
+
+Implement Rate Limiter in Java.
+Object-oriented best practices - System design - Work experience - Standard Technical Questions (binary-tree search, etc)
+Leetcode medium difficulty SQL questions
+Live coding exercises in C++ included linked lists and circular buffers among others. The C questions involved being shown various code snippets and finding the bugs and/or issues, many of which were very subtle, so know your C!
+There were two test during the process Use hackerrank as online coding test. The difficulty of problems are easy~medium. My interview is not a pleasant experience. The interview ended quickly due to communication issue.
+https://thehftguy.com/2016/07/13/cracking-the-hackerrank-test-google-to-the-rescue/
+https://chrome.google.com/webstore/detail/hackerrank-codepair/mnkgahiafhiphkelfiignncoifadhpnd?hl=en
+https://dev.to/captemulation/mastering-the-code-pair-interview-2k1o
+
+
+________________
+
+
+missing number in array
+"""
+finding missin number
+"""
+
+
+m_array = [1,2,3,5,6,7,8,9,10]
+
+
+def get_missing(data, n):
+"""
+equation n(n+1)/2
+so the number of integers 10+1/2
+(10*11)/2
+;params data: str()
+;params n: str()
+return None; 
+"""
+
+
+sum1 = 10*11/2
+sum2 = sum(data)
+print(sum1-sum2)
+
+
+
+
+if __name__ == "__main__":
+get_missing(m_array, 10)
+find dups GOLD
+"""
+uniqu
+"""
+
+
+my_list = [1,20,30,44,5,56,57,8,19,10,31,12,13,14,35,16,27,58,19,21]
+
+
+
+
+def dups(array=None):
+"""
+;params array: list()
+;return: int()
+"""
+assert array is not None, "Need an array"
+assert len(array) !=0, "Empty array"
+assert type(array[-1]) is int, "Must have integers"
+m_dict = dict()
+for i in array:
+if i not in m_dict.keys():
+m_dict[i] = 1
+else:
+m_dict[i] += 1
+foo = {k:v for (k,v) in m_dict.items() if v >1}
+return list(foo.keys())[0]
+
+
+if __name__ == "__main__":
+foo = 'asdf'
+print(dups(array=my_list))
+Linked List section 177
+from random import randint
+class Node():
+
+
+def __init__(self, value=None):
+self.value = value
+self.next = None
+self.prev = None
+
+
+def __str__(self):
+return str(self.value)
+
+
+class LinkedList():
+
+
+def __init__(self, values = None):
+self.head = None
+self.tail = None
+
+
+def __iter__(self):
+curNode = self.head
+while curNode:
+yield curNode
+curNode = curNode.next
+
+
+def __str__(self):
+values = [str(x.value) for x in self]
+return ' -> '.join(values)
+
+
+def __len__(self):
+result= 0
+node = self.head
+while node:
+result += 1
+node = node.next
+return result
+
+
+def add(self, value):
+if self.head is None:
+newNode = Node(value)
+self.head = newNode
+self.tail = newNode
+else:
+self.tail.next = Node(value)
+self.tail = self.tail.next
+return self.tail
+
+
+def generate(self, n, min_value, max_value):
+self.head = None
+self.tail = None
+for i in range(n): 
+self.add(randint(min_value, max_value))
+return self
+
+
+customL = LinkedList()
+customL.generate(10, 0, 99)
+print(customL)
+print(len(customL))
+
+
+paste stack here  -->
+paste queue here  -->
+tree -> 
+
+
+bubble sort
+"""
+bubble sort
+"""
+def my_bubble(array):
+for i in range(len(array)-1):
+for j in range(len(array)-i-1):
+if array[j] > array[j+1]:
+array[j], array[j+1] = array[j+1], array[j]
+print(array)
+
+
+my_list = [1,5,2,8,7,9,4]
+print(my_list)
+my_bubble(my_list)
+insert sort
+def insertionSort(customList):
+for i in range(1, len(customList)):
+key = customList[i]
+j = i-1
+while j>=0 and key < customList[j]:
+customList[j+1] = customList[j]
+j -= 1
+customList[j+1] = key
+return customList
+insert sort 2
+alist = [54,26,93,17,77,31,44,55,20]
+for i in range(1,len(alist)):
+current= alist[i]
+pos= i
+while pos>0 and alist[pos-1]>current:
+alist[pos]=alist[pos-1]
+pos= pos-1
+alist[pos]=current
+print alist
+linear search
+binary search must be ordered---meh 
+alist=[3,5,2,4,1]
+item=2
+
+
+num=0
+found=False
+last=len(alist)-1
+
+
+while num <= last and not found:
+midpoint=(num+last)//2
+
+
+if alist[midpoint] == item:
+found=True
+else:
+if item < alist[midpoint]:
+last=midpoint-1
+else:
+num=midpoint+1
+print found
+combine two lists
+L1=[1,2,5,2]
+L2=[1,3,4,2]
+L3=[[3,4,8,8],[1,3,4,2]]
+for i in range(len(L1)):
+result = "%d, %d" % (L1[i], L2[i])
+print result
+two list zip
+L1=[1,2,5,2]
+L2=[1,3,4,2]
+L3=[3,4,8,8]
+#for i in range(len(L1)):
+for i in zip(L1,L2):
+print " ".join(str(i))
+a1list.py
+L1=["a","b","c"]
+L2=[1,2,3]
+ar=[]
+for i in range(len(L1)):
+result = "%s%d" % (L1[i], L2[i])
+ar.append(result)
+print ar
+compare.py
+list1=[1,2,3,4,5]
+list2=[11,2,7,8,5] 
+if [x for x in list1 if x in list2]:
+print "found"
+else:
+print "not found"
+dat=[x for x in list1 if x in list2]
+print dat
+
+
+print "----------"
+odd=[x for x in list1 if x%2 == 1]
+print odd
+even=[x for x in list1 if x%2 == 0]
+print even
+
+
+print list2[0::2]
+count items dict
+mstr="wocoolneetnicee"
+
+
+mdict={}
+for i in mstr:
+if i not in dict.keys(mdict):
+mdict[i]=1
+else:
+mdict[i] += 1
+print mstr
+print mdict
+
+
+print "--------------"
+for i in dict.keys(mdict):
+if mdict[i] > 1:
+print "%s: %s" % (i,mdict[i]) 
+else: 
+print "no"
+get small
+a=[3,5,2,9]
+
+
+small=0
+for i in a:
+tsmall=True
+for j in a:
+if i>j:
+tsmall=False
+if tsmall:
+small=i
+print small
+rev words
+class Solution:
+# @param s, a string
+# @return a string
+def reverseWords(self, s):
+dat=0
+ar=[]
+new=s.split(" ")
+for i in range(len(new)):
+ar.append(new[dat-1])
+dat-=1
+mystr=" ".join(ar)
+return mystr
+
+
+if __name__=="__main__":
+s="the sky is blue"
+blah=Solution()
+print(blah.reverseWords(s))
+nested dict
+def myprint(d): 
+if type(d)==type({}): 
+for k,v in d.iteritems():
+# print k,v
+print "{0}:{1}".format(k,v)
+else:
+print k,v 
+
+
+ndict={'k1':'v1',
+'k2':{'k3':'v3','k4':'v4'},
+'k5':'v5'}
+
+
+
+
+print type(ndict)
+myprint(ndict)
+rev string
+mystr="Halloween"
+ar=[]
+for i in mystr:
+ar.append(i)
+dat=0
+for i in range(len(ar)):
+print ar[dat-1]
+dat-=1
+dict sort keys
+mdict={'carl':40,'alan':2,'bob':1,'danny':3}
+
+
+keylist=list(mdict.keys())
+foo = sorted(keylist)
+for key in foo:
+print(f"k:{key}, v:{mdict[key]}")
+subclass
+#subclass.py
+
+
+class myClass:
+def set(self,var):
+self.dat=var
+def mprint(self):
+print(self.dat)
+class subClass(myClass):
+def mprint(self):
+print("Change data = %s" % self.dat)
+x=myClass()
+x.set(42)
+x.mprint()
+y=subClass()
+y.set("Hitchhiker")
+y.mprint()
+sum
+a=[3,5,2,9]
+
+
+tot=0
+for i in a:
+tot=tot+i 
+print tot
+superclass
+'''
+super() lets you avoid referring to base class explicitly
+syntax is as follows: super(Childb,sellf).__init__()
+3.0 syntax super().__init__()
+
+
+'''
+tree
+class Node(object):
+def __init__(self, data):
+self.data = data
+self.children = []
+
+
+def add_child(self, obj):
+self.children.append(obj)
+
+
+n=Node(5)
+p=Node(6)
+q=Node(7)
+n.add_child(p)
+n.add_child(q)
+
+
+for i in n.children:
+print(i.data)
+print("-----")
+print(n.data)
+print("====")
+print(n.children)
+
+
+results:
+6
+7
+-----
+5
+====
+tree2
+class Tree(object):
+def __init__(self):
+self.left = None
+self.right = None
+self.data = None
+#You can use it like this:
+
+
+root = Tree()
+root.data = "root"
+root.left = Tree()
+root.left.data = "left"
+root.right = Tree()
+root.right.data = "right"
+
+
+print root.data 
+print root.left
+print root.left.data
+print root.right
+print root.right.data
+
+
+williamgunnells@WilliamMAC pyinterview % vi tree1.py 
+williamgunnells@WilliamMAC pyinterview % python3 tree1.py 
+root
+<__main__.Tree object at 0x7f932f326f10>
+left
+<__main__.Tree object at 0x7f932f326fa0>
+right
+root dict
+#rooted tree as a dictionary {child:parent}. So for instance with the root node 
+
+
+tree={1:0,2:0,3:1,4:2,5:3}
+
+
+
+
+
+
+
+
+________________
+
+
+
+
+# assert before unittest 
+"""
+def average(*numbers): #* numbers tuple 
+# return sum(numbers)/len(numbers)
+numbers=[float(numbers) for numbers in numbers]
+return sum(numbers) / float(len(numbers))
+
+
+# test scenarios of method:
+print average(1,2,3)
+print average(1,-3)
+print average(0,1)
+#print average()
+
+
+
+
+# add scenarios to method with assert:
+def test_average():
+assert average(1,2,3) == 2 
+assert average(1,-3) == -1
+assert average(0,1) == .5
+assert average(2) == 2 
+try:
+average()
+except Exception:
+print "At least enter 1 number" 
+test_average()
+"""
+from utils import average
+#######################################
+# split into two files and import code above called utils.py
+# then comment above
+
+
+import unittest
+
+
+class MyTest(unittest.TestCase):
+def test_average(self):
+self.assertEquals(average(1,2,3),2)
+self.assertEquals(average(1,-3),-1)
+self.assertEquals(average(0,1),0.5)
+self.assertEquals(average(2),2)
+
+
+class MyTest2(unittest.TestCase):
+def test_another_test(self):
+pass
+
+
+
+
+
+
+if __name__=='__main__':
+unittest.main()
+
+
+''' test suite
+
+
+#this class works independent of suite
+class MyTest2(unittest.TestCase):
+def test_another_test(self):
+pass
+
+
+def test_suite():
+'''build the test suite'''
+def _suuite(test_class):
+return unittest.makeSuite(test_class)
+suite=unittest.TestSuite()
+suite.addTests((_suite(MyTests),_suite(MyTest2)))
+return suite
+if__name__=="__main__":
+unittest.main(defaultTest='test_suite')
+
+
+
+
+'''
+
+
+class game
+class Player():
+def __init__(self):
+self.score = 0
+
+
+def increaseScore(self,x):
+self.score += x
+
+
+def decreaseScore(self,x):
+self.score -= x
+
+
+class Game():
+def __init__(self):
+self.players = []
+
+
+def addPlayer(self,p):
+self.players.append(p)
+
+
+def removePlayer(self,p):
+self.players.remove(p)
+
+
+def printScore(self):
+score = 0
+for p in self.players:
+score += p.score
+print("Current Score {}".format(score))
+
+
+p1 = Player()
+p2 = Player()
+
+
+game = Game()
+game.addPlayer(p1)
+game.addPlayer(p2)
+
+
+p2.increaseScore(1)
+p1.increaseScore(5)
+game.printScore()
+
+
+game.removePlayer(p1)
+game.removePlayer(p2)
+game.printScore()
+
+
+
+
+remove multiple items from a list
+# Python program to remove multiple
+# elements from a list
+# creating a list
+list1 = [11, 5, 17, 18, 23, 50]
+# items to be removed
+unwanted_num = {11, 5}
+list1 = [ele for ele in list1 if ele not in unwanted_num]
+# printing modified list
+print("New list after removing unwanted numbers: ", list1)
+
+
+More key value parsing in dict would be nice
+
+
+________________
+
+
+asdf
