@@ -2,3 +2,9 @@ https://www.youtube.com/watch?v=Zee665ssm8Y
 https://realpython.com/python-coding-interview-tips/
 https://realpython.com/learning-paths/python-interview/
 
+interesting questions that are popular
+https://towardsdatascience.com/10-algorithms-to-solve-before-your-python-coding-interview-feb74fb9bc27
+https://towardsdatascience.com/5-pythons-sets-problems-to-solve-before-your-coding-interview-41bb1d14ac25
+https://medium.com/pythoneers/7-must-know-algorithms-for-your-next-coding-interview-26252748b895
+https://thecleverprogrammer.com/2021/03/11/the-most-popular-coding-interview-questions-using-python/
+https://medium.com/@codingfreak/hashing-problems-in-data-structures-c41b77a5119a
