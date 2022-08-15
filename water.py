@@ -14,7 +14,7 @@ def water(data, x, y):
             height.append(y)
             width.append(i)
     volume = min(height) * (max(width)-min(width))
-    return(volume)
+    return volume
 
                 
 my_array = [4, 2, 3, 5, 8, 7, 1]
